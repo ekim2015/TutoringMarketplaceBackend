@@ -13,18 +13,18 @@ import com.ekim.tutoring.models.User;
 import com.ekim.tutoring.services.UserService;
 
 @RestController
-@RequestMapping('/users')
+@RequestMapping("/users")
 public class UserController {
     @Autowired
     private UserService userService;
 
     // check if registered?
-    @PostMapping(value='/{username}')
+    @PostMapping(value="/{username}")
     public ResponseEntity<User> registerUser(@PathVariable String username) {
 
     }
 
-    @PostMapping(value='/{username}')
+    @PostMapping(value="/{username}")
     public ResponseEntity<User> loginUser(@PathVariable String username) {
         
     }

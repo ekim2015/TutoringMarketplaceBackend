@@ -9,16 +9,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ekim.tutoring.models.Customer;
 import com.ekim.tutoring.services.CustomerService;
 
 @RestController
-@RequestMapping('/customers')
-public class UserController {
+@RequestMapping("/customers")
+public class CustomerController {
     @Autowired
     private CustomerService customerService;
 
-    @GetMapping(value='/{customerUser}')
-    public ResponseEntity<Tutor> getTutorDetails(@PathVariable String customerUser) {
+    @GetMapping(value="/{customerUser}")
+    public ResponseEntity<Customer> getTutorDetails(@PathVariable String customerUser) {
         
     }
 

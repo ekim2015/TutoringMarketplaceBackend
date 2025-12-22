@@ -9,17 +9,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ekim.tutoring.models.Tutor;
 import com.ekim.tutoring.services.TutorService;
 
 @RestController
-@RequestMapping('/tutors')
-public class UserController {
+@RequestMapping("/tutors")
+public class TutorController {
     @Autowired
     private TutorService tutorService;
 
-    @GetMapping(value='/{tutorUser}')
+    @GetMapping(value="/{tutorUser}")
     public ResponseEntity<Tutor> getTutorDetails(@PathVariable String tutorUser) {
-        Tutor person = tutorService.
+    
     }
 
 }
