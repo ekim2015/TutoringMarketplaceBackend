@@ -1,5 +1,7 @@
 package com.ekim.tutoring.controllers;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +21,13 @@ public class CustomerController {
     private CustomerService customerService;
 
     @GetMapping(value="/{customerUser}")
-    public ResponseEntity<Customer> getTutorDetails(@PathVariable String customerUser) {
-        
+    public ResponseEntity<Customer> getCustomerDetails(@PathVariable String customerUser) {
+        Optional<Customer> foundCustomer = customerService.findCustomerByUser(customerUser);
+        if (foundCustomer != null) {
+            return new ResponseEntity<>(foundCustomer.get(), HttpStatus.FOUND);
+        }
+
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
 }
